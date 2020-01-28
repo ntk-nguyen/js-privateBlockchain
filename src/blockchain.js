@@ -196,7 +196,7 @@ class Blockchain {
         return new Promise(async (resolve, reject) => {
             let previousBlockHash = null;
             self.chain.forEach((block) => {
-                const isBlockValid = await block.validate();
+                const isBlockValid = block.validate();
                 if (!isBlockValid) {
                     errorLog.push(`Invalid block with hash ${block.hash}`);
                 }
